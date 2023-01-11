@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "search_base64"
+version = "0.0.1"
+dependencies = []
+description = "Package to search for clear text in base64-encoded test"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = [ "base64" ]
+
+[project.urls]
+"Homepage" = "https://github.com/erakem/searchBase64"
+"Bug Tracker" = "https://github.com/erakem/searchBase64/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests"
+]
