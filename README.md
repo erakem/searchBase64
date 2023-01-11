@@ -10,8 +10,15 @@ But for a partially base64-encoded file, it is not possible anymore.
 With this code, you could do
 
 ```
-$ echo "HEADER$(echo -n "Hi Bob! How are you doing?" | base64)TRAILER" | python3 -m search_base64 Bob
+$ echo "HEADER$(echo -n "Hi Bob! How are you doing?" | base64)TRAILER" | python3 -m search_base64.find Bob
 -: found Bob => Qm9i
+```
+
+# **Installation**
+
+You can install it as a PyPI package:
+```
+pip install search-base64
 ```
 
 # **Base64**
@@ -330,11 +337,11 @@ So now we have all information to look for "Bob" directly inside the base64-enco
 ## **Let's use this tool**
 
 ```
-$ echo -n "Dear Bob!" | base64 | python3 -m search_base64 Bob
+$ echo -n "Dear Bob!" | base64 | python3 -m search_base64.find Bob
 -: found Bob => BCb2I # See case 3 above
-$ echo -n "Dear  Bob!" | base64 | python3 -m search_base64 Bob
+$ echo -n "Dear  Bob!" | base64 | python3 -m search_base64.find Bob
 -: found Bob => Qm9i # See case 1 above
-$ echo -n "Dear   Bob!" | base64 | python3 -m search_base64 Bob
+$ echo -n "Dear   Bob!" | base64 | python3 -m search_base64.find Bob
 -: found Bob => EJvYi # See case 2 above
 ```
 
